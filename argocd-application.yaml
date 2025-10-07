@@ -13,7 +13,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/QuanMBL4255142/Project_cms_CI_CD_FPT_repoA_Backend.git
+    repoURL: https://github.com/QuanMBL4255142/Project_cms_CI_CD_FPT_repoB_DevOps.git
     targetRevision: HEAD
     path: k8s
   destination:

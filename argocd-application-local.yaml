@@ -11,9 +11,9 @@ metadata:
 spec:
   project: default
   source:
+    repoURL: https://github.com/QuanMBL4255142/Project_cms_CI_CD_FPT_repoB_DevOps.git
+    targetRevision: HEAD
     path: k8s
-    directory:
-      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-new
