@@ -1,0 +1,25 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: django-pdb
+  namespace: argocd-new
+  labels:
+    app: django-app
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: django-app
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: postgres-pdb
+  namespace: argocd-new
+  labels:
+    app: postgres
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: postgres
