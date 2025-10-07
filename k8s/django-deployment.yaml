@@ -22,6 +22,17 @@ spec:
         app: django-app
         version: v1.0.0
     spec:
+      initContainers:
+      - name: wait-for-postgres
+        image: postgres:13
+        command: ['sh', '-c']
+        args:
+        - |
+          until pg_isready -h postgres-service -p 5432 -U postgres; do
+            echo "Waiting for postgres..."
+            sleep 2
+          done
+          echo "PostgreSQL is ready!"
       containers:
       - name: django
         image: ghcr.io/quanmbl4255142/project_cms_ci_cd_fpt_repoa_backend:latest
